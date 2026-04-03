@@ -1,0 +1,118 @@
+schema_version: "1.0"
+mcp_name: "UK Land & Woodland Management MCP"
+category: "domain_intelligence"
+
+sources:
+  - name: "Hedgerow Regulations 1997"
+    authority: "UK Government"
+    official_url: "https://www.legislation.gov.uk/uksi/1997/1160/contents/made"
+    api_url: null
+    retrieval_method: "MANUAL_REVIEW"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Hedgerow removal notices, important hedgerow criteria, exemptions, penalties"
+      version: "current (as amended)"
+      item_count: "8 rule entries"
+    languages:
+      - "en"
+
+  - name: "Forestry Act 1967 (as amended)"
+    authority: "UK Government"
+    official_url: "https://www.legislation.gov.uk/ukpga/1967/10/contents"
+    api_url: null
+    retrieval_method: "MANUAL_REVIEW"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Felling licence thresholds, exemptions, application process, penalties"
+      version: "current (as amended)"
+      item_count: "10 rule entries"
+    languages:
+      - "en"
+
+  - name: "Wildlife and Countryside Act 1981"
+    authority: "UK Government"
+    official_url: "https://www.legislation.gov.uk/ukpga/1981/69/contents"
+    api_url: null
+    retrieval_method: "MANUAL_REVIEW"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "SSSI operations requiring consent, notification process, penalties"
+      version: "current (as amended)"
+      item_count: "9 operation entries"
+    languages:
+      - "en"
+
+  - name: "Countryside and Rights of Way Act 2000"
+    authority: "UK Government"
+    official_url: "https://www.legislation.gov.uk/ukpga/2000/37/contents"
+    api_url: null
+    retrieval_method: "MANUAL_REVIEW"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Rights of way obligations, SSSI enforcement, open access land"
+      version: "current (as amended)"
+      item_count: "7 path type entries"
+    languages:
+      - "en"
+
+  - name: "Commons Act 2006"
+    authority: "UK Government"
+    official_url: "https://www.legislation.gov.uk/ukpga/2006/26/contents"
+    api_url: null
+    retrieval_method: "MANUAL_REVIEW"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Common land works consent, fencing, public access"
+      version: "current (as amended)"
+      item_count: "5 activity entries"
+    languages:
+      - "en"
+
+  - name: "Forestry Commission EWCO Guidance"
+    authority: "Forestry Commission"
+    official_url: "https://www.gov.uk/guidance/england-woodland-creation-offer"
+    api_url: null
+    retrieval_method: "MANUAL_REVIEW"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "annual"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Woodland creation grants, EIA thresholds, ancient woodland buffers, species guidance"
+      version: "2025-2026 rates"
+      item_count: "6 guidance entries"
+    languages:
+      - "en"

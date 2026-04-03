@@ -1,0 +1,12 @@
+{
+  "mcp_name": "UK Land & Woodland Management MCP",
+  "jurisdiction": "GB",
+  "build_date": "2026-04-03",
+  "hedgerow_rules": 8,
+  "felling_rules": 10,
+  "sssi_operations": 9,
+  "rights_of_way": 7,
+  "common_land_rules": 5,
+  "planting_guidance": 6,
+  "fts_entries": 20
+}

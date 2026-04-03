@@ -1,0 +1,27 @@
+{
+  "name": "uk-land-woodland-mcp",
+  "display_name": "UK Land & Woodland Management MCP",
+  "description": "UK land and woodland management regulations via MCP -- hedgerow regulations, felling licences, SSSI consent, rights of way, common land, planting guidance",
+  "version": "0.1.0",
+  "jurisdiction": "GB",
+  "category": "domain_intelligence",
+  "tools_count": 10,
+  "transport": {
+    "stdio": {
+      "command": "npx",
+      "args": ["-y", "@ansvar/uk-land-woodland-mcp"]
+    },
+    "http": {
+      "url": "https://mcp.ansvar.eu/uk-land-woodland/mcp"
+    }
+  },
+  "docker": {
+    "image": "ghcr.io/ansvar-systems/uk-land-woodland-mcp:latest",
+    "port": 3000
+  },
+  "links": {
+    "homepage": "https://ansvar.eu/open-agriculture",
+    "repository": "https://github.com/Ansvar-Systems/uk-land-woodland-mcp",
+    "npm": "https://www.npmjs.com/package/@ansvar/uk-land-woodland-mcp"
+  }
+}
