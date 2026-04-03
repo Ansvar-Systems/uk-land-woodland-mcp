@@ -107,6 +107,18 @@ function initSchema(db: BetterSqlite3.Database): void {
       jurisdiction TEXT NOT NULL DEFAULT 'GB'
     );
 
+    CREATE TABLE IF NOT EXISTS tpo_rules (
+      id INTEGER PRIMARY KEY,
+      scenario TEXT NOT NULL,
+      consent_required INTEGER,
+      consent_authority TEXT,
+      exemptions TEXT,
+      process TEXT,
+      penalties TEXT,
+      regulation_ref TEXT,
+      jurisdiction TEXT NOT NULL DEFAULT 'GB'
+    );
+
     CREATE VIRTUAL TABLE IF NOT EXISTS search_index USING fts5(
       title, body, topic, jurisdiction
     );

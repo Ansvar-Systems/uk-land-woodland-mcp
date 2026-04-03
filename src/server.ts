@@ -18,6 +18,7 @@ import { handleCheckSSSIConsent } from './tools/check-sssi-consent.js';
 import { handleGetRightsOfWayRules } from './tools/get-rights-of-way-rules.js';
 import { handleGetCommonLandRules } from './tools/get-common-land-rules.js';
 import { handleGetPlantingGuidance } from './tools/get-planting-guidance.js';
+import { handleGetTPORules } from './tools/get-tpo-rules.js';
 
 const SERVER_NAME = 'uk-land-woodland-mcp';
 const SERVER_VERSION = '0.1.0';
@@ -126,6 +127,17 @@ const TOOLS = [
       },
     },
   },
+  {
+    name: 'get_tpo_rules',
+    description: 'Get Tree Preservation Order rules. Returns consent requirements, exemptions, process, and penalties under TCPA 1990 Part VIII.',
+    inputSchema: {
+      type: 'object' as const,
+      properties: {
+        scenario: { type: 'string', description: 'Scenario (e.g. works, dead tree, conservation area, penalty)' },
+        jurisdiction: { type: 'string', description: 'ISO 3166-1 alpha-2 code (default: GB)' },
+      },
+    },
+  },
 ];
 
 const SearchArgsSchema = z.object({
@@ -171,6 +183,11 @@ const PlantingArgsSchema = z.object({
   jurisdiction: z.string().optional(),
 });
 
+const TPOArgsSchema = z.object({
+  scenario: z.string().optional(),
+  jurisdiction: z.string().optional(),
+});
+
 function textResult(data: unknown) {
   return { content: [{ type: 'text' as const, text: JSON.stringify(data, null, 2) }] };
 }
@@ -213,6 +230,8 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
         return textResult(handleGetCommonLandRules(db, CommonLandArgsSchema.parse(args)));
       case 'get_planting_guidance':
         return textResult(handleGetPlantingGuidance(db, PlantingArgsSchema.parse(args)));
+      case 'get_tpo_rules':
+        return textResult(handleGetTPORules(db, TPOArgsSchema.parse(args)));
       default:
         return errorResult(`Unknown tool: ${name}`);
     }

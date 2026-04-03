@@ -7,7 +7,7 @@ describe('about tool', () => {
     expect(result.name).toBe('UK Land & Woodland Management MCP');
     expect(result.description).toContain('hedgerow');
     expect(result.jurisdiction).toEqual(['GB']);
-    expect(result.tools_count).toBe(10);
+    expect(result.tools_count).toBe(11);
     expect(result.links).toHaveProperty('homepage');
     expect(result._meta).toHaveProperty('disclaimer');
   });

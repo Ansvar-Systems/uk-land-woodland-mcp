@@ -13,12 +13,15 @@ export function handleAbout() {
     data_sources: [
       'Hedgerow Regulations 1997',
       'Forestry Act 1967',
+      'Town and Country Planning Act 1990 Part VIII',
       'Wildlife and Countryside Act 1981',
       'Countryside and Rights of Way Act 2000',
       'Commons Act 2006',
+      'Highways Act 1980',
+      'Anti-social Behaviour Act 2003 Part 8',
       'Forestry Commission EWCO Guidance',
     ],
-    tools_count: 10,
+    tools_count: 11,
     links: {
       homepage: 'https://ansvar.eu/open-agriculture',
       repository: 'https://github.com/Ansvar-Systems/uk-land-woodland-mcp',
