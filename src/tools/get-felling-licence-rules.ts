@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -68,5 +69,12 @@ export function handleGetFellingLicenceRules(db: Database, args: FellingArgs) {
       regulation_ref: r.regulation_ref,
     })),
     _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk/ukpga/1967/10/contents' }),
+    _citation: buildCitation(
+      `UK Felling Licence Rules`,
+      `Felling licence requirements (${jv.jurisdiction})`,
+      'get_felling_licence_rules',
+      { ...(args.reason && { reason: args.reason }) },
+      'https://www.legislation.gov.uk/ukpga/1967/10/contents',
+    ),
   };
 }

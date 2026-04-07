@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -53,6 +54,13 @@ export function handleCheckHedgerowRules(db: Database, args: HedgerowArgs) {
         regulation_ref: r.regulation_ref,
       })),
       _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk/uksi/1997/1160/contents/made' }),
+      _citation: buildCitation(
+        `UK Hedgerow Rules: ${args.action}`,
+        `Hedgerow regulations for ${args.action} (${jv.jurisdiction})`,
+        'check_hedgerow_rules',
+        { action: args.action },
+        'https://www.legislation.gov.uk/uksi/1997/1160/contents/made',
+      ),
     };
   }
 
@@ -70,5 +78,12 @@ export function handleCheckHedgerowRules(db: Database, args: HedgerowArgs) {
       regulation_ref: r.regulation_ref,
     })),
     _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk/uksi/1997/1160/contents/made' }),
+    _citation: buildCitation(
+      `UK Hedgerow Rules: ${args.action}`,
+      `Hedgerow regulations for ${args.action} (${jv.jurisdiction})`,
+      'check_hedgerow_rules',
+      { action: args.action },
+      'https://www.legislation.gov.uk/uksi/1997/1160/contents/made',
+    ),
   };
 }
