@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -49,6 +50,13 @@ export function handleCheckSSSIConsent(db: Database, args: SSSIArgs) {
         penalties: r.penalties,
       })),
       _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk/ukpga/1981/69/contents' }),
+      _citation: buildCitation(
+        `UK SSSI Consent: ${args.activity}`,
+        `SSSI consent requirements for ${args.activity} (${jv.jurisdiction})`,
+        'check_sssi_consent',
+        { activity: args.activity },
+        'https://www.legislation.gov.uk/ukpga/1981/69/contents',
+      ),
     };
   }
 
@@ -64,5 +72,12 @@ export function handleCheckSSSIConsent(db: Database, args: SSSIArgs) {
       penalties: r.penalties,
     })),
     _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk/ukpga/1981/69/contents' }),
+    _citation: buildCitation(
+      `UK SSSI Consent: ${args.activity}`,
+      `SSSI consent requirements for ${args.activity} (${jv.jurisdiction})`,
+      'check_sssi_consent',
+      { activity: args.activity },
+      'https://www.legislation.gov.uk/ukpga/1981/69/contents',
+    ),
   };
 }

@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -41,5 +42,12 @@ export function handleGetCommonLandRules(db: Database, args: CommonLandArgs) {
       process: r.process,
     })),
     _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk/ukpga/2006/26/contents' }),
+    _citation: buildCitation(
+      `UK Common Land Rules`,
+      `Common land rules${args.activity ? ` for ${args.activity}` : ''} (${jv.jurisdiction})`,
+      'get_common_land_rules',
+      { ...(args.activity && { activity: args.activity }) },
+      'https://www.legislation.gov.uk/ukpga/2006/26/contents',
+    ),
   };
 }
